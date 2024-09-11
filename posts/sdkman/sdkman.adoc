@@ -125,6 +125,30 @@ image::./intellij-sdkman-support.png[sdkman support in intellij]
 
 Enable auto switching of java versions as you switch between projects by setting `sdkman_auto_env=true` in `~/.sdkman/etc/config`.
 
+Now as you `cd` into a directory, the correct version of java will be enabled.
+
+[source,text]
+----
+% cd posts/sdkman
+
+Using java version 21.0.3-tem in this shell.
+
+% cd ../..
+
+Using java version 22.0.1-open in this shell.
+----
+
+If you checkout a project, use `sdk env install` to ensure you have the right SDKs installed and activated.
+
+[source,text]
+----
+% sdk env install
+
+java 21.0.3-tem is already installed.
+
+Using java version 21.0.3-tem in this shell.
+----
+
 See the full documentation at https://sdkman.io/usage/
 
 === Summary
