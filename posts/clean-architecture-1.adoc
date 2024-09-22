@@ -23,13 +23,13 @@ The project is split into 3 main modules: Application, Adapter and Bootstrap.
 
 === Application
 
-** `Application` - which handles the business logic and domain for our system
+** link:https://github.com/prule/rest-hateoas/tree/main/application[Application] - which handles the business logic and domain for our system
 *** Application contains
-**** `Ports` - interfaces which define how the outside world interacts with the application and vice versa.
+**** link:https://github.com/prule/rest-hateoas/tree/main/application/src/main/kotlin/com/example/rest_hateoas/application/port[Ports] - interfaces which define how the outside world interacts with the application and vice versa.
 ***** `In` - `Use Cases` which determine what actions can be performed by the application, `Command Objects` which determine the parameters for the use case.
 ***** `Out` - Interfaces for persistence and external services.
-**** `Services` - these implement the `Use Case` interfaces and manipulate the domain model accordingly, performing any necessary business logic using the interfaces from `Ports` to interact with the outside world.
-**** `Domain` - the domain model, containing entities, value objects, and other domain objects.
+**** link:https://github.com/prule/rest-hateoas/tree/main/application/src/main/kotlin/com/example/rest_hateoas/application/service[Services] - these implement the `Use Case` interfaces and manipulate the domain model accordingly, performing any necessary business logic using the interfaces from `Ports` to interact with the outside world.
+**** link:https://github.com/prule/rest-hateoas/tree/main/application/src/main/kotlin/com/example/rest_hateoas/domain[Domain] - the domain model, containing entities, value objects, and other domain objects.
 
 ==== The domain model
 
@@ -39,11 +39,11 @@ The project is split into 3 main modules: Application, Adapter and Bootstrap.
 
 === Adapter
 
-** `Adapters` - which handle the interfaces between the domain and the outside world
+** link:https://github.com/prule/rest-hateoas/tree/main/adapter[Adapters] - which handle the interfaces between the domain and the outside world
 *** These adapters implement the interfaces from `Ports` and are responsible for interacting with the outside world.
 *** They map from the domain model to the outside world and vice versa. eg from domain to database, or from database to domain. from domain to web resources, and vice versa.
-*** `In` is where we'll have web controllers which will use a `Use Case` to perform the action requested by the user. In the future we may have other incoming adapters such as messaging etc.
-*** `Out` is where we'll implement the persistence layer and mapping between the domain model and the database. In the future we may also have other external interactions such as sending emails, messaging etc.
+*** link:https://github.com/prule/rest-hateoas/tree/main/adapter/src/main/kotlin/com/example/rest_hateoas/adapter/in[In] is where we'll have web controllers which will use a `Use Case` to perform the action requested by the user. In the future we may have other incoming adapters such as messaging etc.
+*** link:https://github.com/prule/rest-hateoas/tree/main/adapter/src/main/kotlin/com/example/rest_hateoas/adapter/out[Out] is where we'll implement the persistence layer and mapping between the domain model and the database. In the future we may also have other external interactions such as sending emails, messaging etc.
 *** The implementation of these adapters can be changed without affecting the domain model or the application. Or, we could have multiple implementations of the same interface, such as multiple databases, or multiple web frameworks.
 **** For example we can have a JPA implementation for persistence, and an Exposed implementation for persistence.
  The application doesn't need to know which implementation is being used since it only uses the interfaces defined in `Ports`. When the application is deployed, it can be configured to use the appropriate implementation.
