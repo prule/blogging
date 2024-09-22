@@ -1,0 +1,77 @@
+== Clean architecture - part 1
+
+After porting my template app over to Kotlin, I thought it was time to attempt rewriting from a layered architecture to a ports and adapters/hexagonal architecture.
+
+In the layered version, the usual patterns exist:
+
+* The domain models ARE the database entities
+** The domain model is compromised, cluttered with persistence concerns and far from clean
+* Services implement the business logic, manipulating the domain (database entities) and persisting them via the repositories
+** Unfortunately the services usually end up being classes with a bunch of methods
+* The web layer takes care of transforming from web inputs, invoking services, and then transforming the entities to return as web resources.
+
+View the branch for the layered version link:[https://github.com/prule/rest-hateoas/tree/version1].
+
+[sidebar]
+====
+Unfortunately the application in its current state isn't complicated enough to properly expose pros and cons. I'm going to have to increase the problem domain to make it worthwhile.
+====
+
+To make the transition, I'm following the link:https://reflectoring.io/book/[Get Your Hands Dirty on Clean Architecture] book and using its associated link:https://github.com/thombergs/buckpal[repository] as guidance.
+
+The project is split into 3 main modules: Application, Adapter and Bootstrap.
+
+=== Application
+
+** `Application` - which handles the business logic and domain for our system
+*** Application contains
+**** `Ports` - interfaces which define how the outside world interacts with the application and vice versa.
+***** `In` - `Use Cases` which determine what actions can be performed by the application, `Command Objects` which determine the parameters for the use case.
+***** `Out` - Interfaces for persistence and external services.
+**** `Services` - these implement the `Use Case` interfaces and manipulate the domain model accordingly, performing any necessary business logic using the interfaces from `Ports` to interact with the outside world.
+**** `Domain` - the domain model, containing entities, value objects, and other domain objects.
+
+==== The domain model
+
+* The domain model is clean, unadulterated code concerned only with modelling the domain - no concerns for persistence, no unnecessary mutability, annotations or extra constructors to keep JPA happy.
+** the domain module doesn't need much in the way of dependencies on external libraries since its only concerned with modelling the domain.
+* Implements validation to ensure the model remains congruent and consistent.
+
+=== Adapter
+
+** `Adapters` - which handle the interfaces between the domain and the outside world
+*** These adapters implement the interfaces from `Ports` and are responsible for interacting with the outside world.
+*** They map from the domain model to the outside world and vice versa. eg from domain to database, or from database to domain. from domain to web resources, and vice versa.
+*** `In` is where we'll have web controllers which will use a `Use Case` to perform the action requested by the user. In the future we may have other incoming adapters such as messaging etc.
+*** `Out` is where we'll implement the persistence layer and mapping between the domain model and the database. In the future we may also have other external interactions such as sending emails, messaging etc.
+*** The implementation of these adapters can be changed without affecting the domain model or the application. Or, we could have multiple implementations of the same interface, such as multiple databases, or multiple web frameworks.
+**** For example we can have a JPA implementation for persistence, and an Exposed implementation for persistence.
+ The application doesn't need to know which implementation is being used since it only uses the interfaces defined in `Ports`. When the application is deployed, it can be configured to use the appropriate implementation.
+
+=== Bootstrap
+
+This configures and launches the application - our entry point to run the application.
+
+=== Summary
+
+So, what is the consequence of this?
+
+* The code structure is different:
+** Many small classes, each with a single responsibility
+*** Each Api endpoint is a separate class
+*** Each service is a separate class implementing a single Use Case.
+*** Its easy to see from looking at the code what models there are and what actions can be performed.
+
+* Smaller classes with a single responsibility means easier to understand and maintain and test.
+* The domain model is clean, unadulterated code concerned only with modelling the domain - no concerns for persistence, no unnecessary mutability, annotations or extra constructors to keep JPA happy. It can be reused under different contexts.
+* There's a bit more mapping work, mapping from the domain model to the persistence model and vice versa.
+
+As I extend the application the approach I'm following is to:
+
+1. Update the domain model to reflect the new requirements
+2. Update the persistence model
+3. Update the web layer
+
+I'll be looking to extend the scope of the domain to make it non trivial and thus exercise the architecture more effectively and see how it goes.
+
+View the branch for the ports and adapters version link:[https://github.com/prule/rest-hateoas/tree/version2].
