@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  // specify timezone for scheduling
+  "timezone": "Australia/Sydney",
+  // run before the workday starts to save pipeline capacity during work hours
+  "schedule": "after 6am and before 8am on Monday",
+  "packageRules": [
+    // group minor and patch into one PR and automerge if build checks pass
+    {
+      "automerge": true,
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackageNames": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    }
+  ]
+}

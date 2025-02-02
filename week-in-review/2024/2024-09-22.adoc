@@ -1,0 +1,7 @@
+Week in review - 2024-09-22
+
+* https://lucamezzalira.medium.com/how-to-document-software-architecture-techniques-and-best-practices-2556b1915850
+** How to document software projects using ADRs, RFCs, and more
+
+
+
