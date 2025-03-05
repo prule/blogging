@@ -1,0 +1,10 @@
+{
+  title: 'json5 example',
+  number: 123,
+  boolean: true,
+  nested: {
+    a: 'b',
+  },
+  multiLineString: "this is \
+    a multi-line string",
+}

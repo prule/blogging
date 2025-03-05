@@ -1,0 +1,9 @@
+{
+  "title": "json example",
+  "number": 123,
+  "boolean": true,
+  "nested": {
+    "a": "b"
+  },
+  "multiLineString": "not possible"
+}
