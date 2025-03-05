@@ -77,3 +77,6 @@ Json5.decodeFromString<Person>("{ name: 'Carl', age: 42 }") // Person(name=Carl,
 Json5.encodeToString(Person("John", 31u)) // {name:"John",age:31}
 ```
 
+Intellij IDEA supports Json5 out of the box.
+
+image::Intellij-support-for-json5.png[Intellij Json5 editor]
