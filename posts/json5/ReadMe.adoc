@@ -1,7 +1,7 @@
 Json5
 ====
 
-The thing about Json is that it's hard to document - without comments you can only see the what, not the why. You could use "description" fields, but that's not very discoverable.
+The thing about Json is that it's hard to document - without comments you can only see the what, not the why. You could use "description" fields, but that's not very flexible or clean.
 
 Thank goodness for Json5!
 
@@ -57,9 +57,11 @@ include::sample-typescript-json5.ts[]
 You can use Json5 in your JavaScript or TypeScript code like this:
 ```
 npm install json5
+
 import JSON5 from 'json5'
-const data = JSON5.parse(json5String)
-JSON5.stringify(data)
+
+const obj = JSON5.parse(json5String)
+const str = JSON5.stringify(obj)
 ```
 
 To convert Json5 to Json use the cli:
@@ -80,3 +82,13 @@ Json5.encodeToString(Person("John", 31u)) // {name:"John",age:31}
 Intellij IDEA supports Json5 out of the box.
 
 image::Intellij-support-for-json5.png[Intellij Json5 editor]
+
+
+Here's a real example of one of my renovate configurations:
+
+.renovate.json5
+[source,json5]
+----
+include::renovate.json5[]
+----
+
