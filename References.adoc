@@ -1,0 +1,55 @@
+Communication
+---
+
+- [The Pyramid Principle](https://medium.com/lessons-from-mckinsey/the-pyramid-principle-f0885dd3c5c7)
+  - Start with the answer first.
+  - Group and summarize your supporting arguments.
+  - Logically order your supporting ideas.
+
+Books
+---
+
+- [37 Signals](https://37signals.com/books)
+  - Shape Up is for product development teams who struggle to ship.
+  - It Doesn’t Have to Be Crazy at Work - Chaos shouldn’t be the natural state at work.
+  - REWORK is the perfect playbook for anyone who’s ever dreamed of doing it on their own.
+  - REMOTE - Office not required.
+  - Getting Real - The smarter, faster, easier way to build a successful web application.
+
+- [Addy Osmani](https://addyosmani.com)
+  - Building large scale web apps
+  - Learning javascript design patterns
+  - Success at scale
+  - Leading effective engineering teams
+  - Software engineering - the soft parts
+  - and more
+
+Repositories
+---
+- https://github.com/public-api-lists/public-api-lists
+- https://github.com/zakirullin/cognitive-load
+- https://github.com/alan2207/bulletproof-react
+- https://github.com/github/scripts-to-rule-them-all
+- https://github.com/SvenWoltmann/hexagonal-architecture-java
+- https://github.com/kamranahmedse/developer-roadmap
+- https://github.com/EbookFoundation/free-programming-books
+- https://github.com/data-engineering-community/data-engineering-wiki
+- https://github.com/javabuddy/best-system-design-resources
+- https://github.com/andresvourakis/data-scientist-handbook
+- https://github.com/keyvanakbary/learning-notes
+- https://github.com/alex/what-happens-when
+- https://github.com/gregorojstersek/resources-to-become-a-great-engineering-leader
+- https://github.com/jordan-cutler/path-to-senior-engineer-handbook
+- https://github.com/getify/You-Dont-Know-JS
+
+
+Blogs
+---
+
+
+Podcasts
+---
+
+
+Youtube
+---
