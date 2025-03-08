@@ -46,9 +46,35 @@ Repositories
 Blogs
 ---
 
+- https://codingchallenges.substack.com
+  - Coding Challenges is a weekly newsletter for software engineers looking to level up and become a better software engineer through building real applications.
+- https://read.highgrowthengineer.com
+- https://newsletter.eng-leadership.com
+- https://theengineeringmanager.substack.com
+- https://tmsd.substack.com - The Modern Software Developer newsletter
+- https://www.operatorshandbook.com - Actionable advice, frameworks and guides to grow your career in Tech. Based on a decade of operating experience at companies like Uber, Meta and Rippling.
+- https://newsletter.pragmaticengineer.com - Big Tech and startups, from the inside. Highly relevant for software engineers and managers, useful for those working in tech.
+- https://newsletter.posthog.com - Helping engineers and founders flex their product muscles
+- https://refactoring.fm - Practical advice on writing great software and working well with humans.
+- https://tidyfirst.substack.com - From Kent Beck
+- https://newsletter.systemdesigncodex.com - learn practical System Design with concepts and case studies
+- https://techbooks.substack.com
+- https://craftingtechteams.substack.com
+
 
 Podcasts
 ---
+
+- [Aquired](https://podcasts.apple.com/au/podcast/acquired/id1050462261) - Every company has a story
+- [Founders](https://podcasts.apple.com/au/podcast/founders/id1141877104) - Learn from history's greatest entrepreneurs
+- [Goto](https://podcasts.apple.com/au/podcast/goto-the-brightest-minds-in-tech/id1559093928) - The brightest minds in tech
+- [How I built this](https://podcasts.apple.com/au/podcast/how-i-built-this-with-guy-raz/id1150510297) - Guy Raz dives into the stories behind some of the world's best known companies.
+- [Land of the giants](https://podcasts.apple.com/au/podcast/land-of-the-giants/id1465767420) - The stories of the world's most successful companies
+- [Refactoring](https://podcasts.apple.com/au/podcast/refactoring-podcast/id1719137305) - Weekly interviews with world-class engineering leaders
+- [Rework](https://podcasts.apple.com/au/podcast/rework/id1264193508) - A podcast by 37signals about the better way to work and run your business
+- [Software engineering daily](https://podcasts.apple.com/au/podcast/software-engineering-daily/id1019576853) - Technical interviews about software topics
+- [Tech lead journal](https://podcasts.apple.com/au/podcast/tech-lead-journal/id1523421550) - [The Eric Ries Show](https://podcasts.apple.com/au/podcast/the-eric-ries-show/id1744818044) - from the author of The Lean Startup
+- [The pragmatic engineer](https://podcasts.apple.com/au/podcast/the-pragmatic-engineer/id1769051199) - Software engineering at Big Tech and startups
 
 
 Youtube
