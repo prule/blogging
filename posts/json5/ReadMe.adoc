@@ -1,9 +1,6 @@
-Json5
-====
+= Json5
 
-The thing about Json is that it's hard to document - without comments you can only see the what, not the why. You could use "description" fields, but that's not very flexible or clean.
-
-Thank goodness for Json5!
+:toc:
 
 Json5 is a superset of JSON that allows for comments and trailing commas. It's a popular choice for configuration files due to its readability and flexibility.
 
@@ -18,6 +15,10 @@ The main reason I'm using Json5 is to
 - allow for comments
 - allow for trailing commas
 - avoid quoting property names - making it easy to use in JavaScript or TypeScript
+
+<<<
+
+== Example
 
 Lets take a simple Json file:
 
@@ -43,6 +44,10 @@ Let's bling it up with comments so we can explain what's going on:
 include::sample.json5[]
 ----
 
+<<<
+
+== Typescript
+
 Now lets pretend the snippet originated in a TypeScript or JavaScript file - we can copy it to a Json5 file without modification -
 the point being that we can easily copy from code into configuration without having to convert to Json format - eg quoting the property names:
 
@@ -51,6 +56,8 @@ the point being that we can easily copy from code into configuration without hav
 ----
 include::sample-typescript-json5.ts[]
 ----
+
+<<<
 
 == How to use it
 
@@ -79,10 +86,13 @@ Json5.decodeFromString<Person>("{ name: 'Carl', age: 42 }") // Person(name=Carl,
 Json5.encodeToString(Person("John", 31u)) // {name:"John",age:31}
 ```
 
+<<<
+
 Intellij IDEA supports Json5 out of the box.
 
 image::Intellij-support-for-json5.png[Intellij Json5 editor]
 
+<<<
 
 Here's a real example of one of my renovate configurations:
 
